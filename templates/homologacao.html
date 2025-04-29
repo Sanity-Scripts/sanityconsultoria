@@ -5,51 +5,108 @@
   <title>Homologação - Integração com Assinatura Eletrônica GOV.BR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
     body {
+      position: relative;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
       background-color: #f8f9fa;
       color: #333;
       margin: 0;
       padding: 0;
+      /* espaço inferior para footer */
+      box-sizing: border-box;
+      z-index: 1;
+      /* Estilo do logo de fundo */
+    }
+    .logo-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+      opacity: 0.10; /* Bem suave */
+    }
+    /* Ajusta para logo de fundo não ser ocultado pelo rodapé */
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header {
-      background-color: #0b3d91;
+      background-color: #014D70;
       color: #fff;
       padding: 20px;
       text-align: center;
     }
     main {
-      padding: 40px 20px;
+      flex: 1;
+      padding: 40px 20px 20px 20px;
       max-width: 800px;
-      margin: auto;
+      margin: 0 auto;
     }
     h1 {
-      color: #0b3d91;
+      color: #fff;
     }
     p {
       line-height: 1.6;
     }
     footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
       background-color: #e9ecef;
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
+      box-shadow: 0 -1px 6px #0001;
+      z-index: 10;
+    }
+    @media (max-width: 600px) {
+      main {
+        padding: 24px 8px 60px 8px;
+      }
+      footer {
+        padding: 14px;
+        font-size: 0.85em;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Ambiente de Homologação</h1>
-  </header>
-  <main>
-    <h2>Integração com a API de Assinatura Eletrônica GOV.BR</h2>
-    <p>Esta página representa o ambiente de homologação da <strong>[Nome da Sua Empresa]</strong> para a integração com a API de Assinatura Eletrônica GOV.BR.</p>
-    <p>O objetivo é validar e testar os fluxos de autenticação e assinatura digital conforme as diretrizes estabelecidas no <a href="https://manual-integracao-assinatura-eletronica.servicos.gov.br/" target="_blank">Manual de Integração</a>.</p>
-    <p>Este ambiente está em desenvolvimento e será utilizado exclusivamente para fins de homologação junto ao GOV.BR.</p>
-    <p>Para mais informações ou dúvidas, entre em contato conosco pelo e-mail: <a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a>.</p>
-  </main>
+  <div class="logo-bg">
+    <!-- SVG logo - sinta-se livre para substituir pela imagem desejada -->
+    <svg width="380" height="380" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg"
+         style="max-width:60vw;max-height:60vh;">
+      <circle cx="190" cy="190" r="190" fill="#0071BC"/>
+      <text x="50%" y="53%" text-anchor="middle" fill="#fff" font-size="70" font-weight="bold" font-family="Arial, sans-serif" dy=".3em">GOV.BR</text>
+    </svg>
+  </div>
+  <div class="content-wrapper">
+    <header>
+      <h1>Ambiente de Homologação</h1>
+    </header>
+    <main>
+      <h2>Integração com a API de Assinatura Eletrônica GOV.BR</h2>
+      <p>Esta página representa o ambiente de homologação da <strong>Sanity Consultoria</strong> para a integração com a API de Assinatura Eletrônica GOV.BR.</p>
+      <p>O objetivo é validar e testar os fluxos de autenticação e assinatura digital conforme as diretrizes estabelecidas no <a href="https://manual-integracao-assinatura-eletronica.servicos.gov.br/" target="_blank">Manual de Integração</a>.</p>
+      <p>Este ambiente está em desenvolvimento e será utilizado exclusivamente para fins de homologação junto ao GOV.BR.</p>
+      <p>Para mais informações ou dúvidas, entre em contato conosco pelo e-mail: <a href="mailto:comercial@sanityconsultoria.com">comercial@sanityconsultoria.com</a>.</p>
+    </main>
+  </div>
   <footer>
-    &copy; 2025 [Nome da Sua Empresa] - Todos os direitos reservados.
+    &copy; 2025 Sanity Consultoria - Todos os direitos reservados.
   </footer>
 </body>
 </html>

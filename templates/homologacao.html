@@ -14,28 +14,21 @@
       position: relative;
       min-height: 100vh;
       font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
       color: #333;
       margin: 0;
       padding: 0;
-      /* espaço inferior para footer */
       box-sizing: border-box;
-      z-index: 1;
-      /* Estilo do logo de fundo */
     }
-    .logo-bg {
+    /* Plano de fundo com overlay */
+    .bg-image {
       position: fixed;
       top: 0; left: 0;
       width: 100vw; height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       z-index: 0;
-      pointer-events: none;
-      user-select: none;
-      opacity: 0.10; /* Bem suave */
+      background: 
+        linear-gradient(to bottom, rgba(10,32,80, 0.46) 0%, rgba(1,77,112,0.5) 70%, rgba(10,32,80, 0.72) 100%),
+        url('https://anrbrasil.org.br/wp-content/uploads/2023/11/ANR-656-Cover-whatsapp-1600-%C3%97-800-px-1.png') center center / cover no-repeat;
     }
-    /* Ajusta para logo de fundo não ser ocultado pelo rodapé */
     .content-wrapper {
       position: relative;
       z-index: 1;
@@ -44,22 +37,37 @@
       flex-direction: column;
     }
     header {
-      background-color: #014D70;
+      background-color: rgba(1,77,112, 0.95);
       color: #fff;
       padding: 20px;
       text-align: center;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 1px 10px #0003;
     }
     main {
       flex: 1;
       padding: 40px 20px 20px 20px;
       max-width: 800px;
       margin: 0 auto;
+      background: rgba(255,255,255,0.87);
+      border-radius: 12px;
+      margin-top: 36px;
+      box-shadow: 0 4px 32px #0002;
     }
     h1 {
       color: #fff;
+      text-shadow: 1px 2px 4px #012, 0 1px 0 #669;
+    }
+    h2 {
+      color: #014D70;
     }
     p {
       line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    a {
+      color: #014D70;
+      text-decoration: underline;
     }
     footer {
       position: fixed;
@@ -70,12 +78,13 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      box-shadow: 0 -1px 6px #0001;
+      box-shadow: 0 -1px 6px #0002;
       z-index: 10;
     }
     @media (max-width: 600px) {
       main {
         padding: 24px 8px 60px 8px;
+        margin-top: 20px;
       }
       footer {
         padding: 14px;
@@ -85,14 +94,7 @@
   </style>
 </head>
 <body>
-  <div class="logo-bg">
-    <!-- SVG logo - sinta-se livre para substituir pela imagem desejada -->
-    <svg width="380" height="380" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg"
-         style="max-width:60vw;max-height:60vh;">
-      <circle cx="190" cy="190" r="190" fill="#0071BC"/>
-      <text x="50%" y="53%" text-anchor="middle" fill="#fff" font-size="70" font-weight="bold" font-family="Arial, sans-serif" dy=".3em">GOV.BR</text>
-    </svg>
-  </div>
+  <div class="bg-image"></div>
   <div class="content-wrapper">
     <header>
       <h1>Ambiente de Homologação</h1>
@@ -100,7 +102,7 @@
     <main>
       <h2>Integração com a API de Assinatura Eletrônica GOV.BR</h2>
       <p>Esta página representa o ambiente de homologação da <strong>Sanity Consultoria</strong> para a integração com a API de Assinatura Eletrônica GOV.BR.</p>
-      <p>O objetivo é validar e testar os fluxos de autenticação e assinatura digital conforme as diretrizes estabelecidas no <a href="https://anrbrasil.org.br/wp-content/uploads/2023/11/ANR-656-Cover-whatsapp-1600-%C3%97-800-px-1.png/" target="_blank">Manual de Integração</a>.</p>
+      <p>O objetivo é validar e testar os fluxos de autenticação e assinatura digital conforme as diretrizes estabelecidas no <a href="https://manual-integracao-assinatura-eletronica.servicos.gov.br/" target="_blank">Manual de Integração</a>.</p>
       <p>Este ambiente está em desenvolvimento e será utilizado exclusivamente para fins de homologação junto ao GOV.BR.</p>
       <p>Para mais informações ou dúvidas, entre em contato conosco pelo e-mail: <a href="mailto:comercial@sanityconsultoria.com">comercial@sanityconsultoria.com</a>.</p>
     </main>
